@@ -1,11 +1,8 @@
-language: 
+language:
   - python
 python:
-  - "2.6"
   - "2.7"
-env:
-  - DJANGO_VERSION=1.7
 install:
-  - pip install Django>=1.7 --use-mirrors
-script: 
+  - pip install -r requirements
+script:
   - python test.py
