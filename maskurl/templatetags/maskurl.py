@@ -1,17 +1,16 @@
 #-*- coding: utf-8 -*-
 from django.template import Library
 from django.core.signing import dumps
-from django.utils.http import urlquote
-from django.core.urlresolvers import reverse
+from django.utils.http import urlquote, urlunquote
+from django.core.urlresolvers import reverse as url_reverse
 from django import VERSION
-from re import search as regex_search
 
 DJANGO_VERSION = int("".join(map(str, VERSION[:3])))
 
 register = Library()
 
 @register.assignment_tag
-def maskurl(url, *args, **kwargs):
+def maskurl(given_url, *args, **kwargs):
     """
     Probable usage:
     - {% url 'main' %} ->
@@ -34,10 +33,10 @@ def maskurl(url, *args, **kwargs):
     """
 
     maskedurl = ""
-    match = regex_search(r"'(.*?)'", url)
-
+    match = given_url.find("/") == -1
     if match:
-        resolved_url = reverse(url, args, kwargs)
+        reversed_url = url_reverse(given_url, args=args, kwargs=kwargs)
+        resolved_url = urlunquote(reversed_url)
         maskedurl = dumps(resolved_url.lstrip('/'))
     else:
         maskedurl = dumps(url.lstrip('/'))

@@ -18,8 +18,11 @@ class UnMaskURLMiddleware(object):
         then resolve operation to find the view and also given args
         after all result can be served.
         """
-        unquoted_url = urlunquote(request.get_full_path()).lstrip('/')
-        unmasked_url = '/%s' % loads(unquoted_url)
-        func, args, kwargs = resolve(unmasked_url)
+        unquoted_url = urlunquote(request.path.lstrip('/'))
+        try:
+            unmasked_url = '/%s' % loads(unquoted_url)
+            func, args, kwargs = resolve('/%s' % unmasked_url)
+        except:
+            func, args, kwargs = resolve('/%s' % unquoted_url)
         kwargs['request'] = request
         func(*args, **kwargs)
