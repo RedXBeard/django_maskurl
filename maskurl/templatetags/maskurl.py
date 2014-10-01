@@ -39,7 +39,7 @@ def maskurl(given_url, *args, **kwargs):
         resolved_url = urlunquote(reversed_url)
         maskedurl = dumps(resolved_url.lstrip('/'))
     else:
-        maskedurl = dumps(url.lstrip('/'))
+        maskedurl = dumps(given_url.lstrip('/'))
 
     if DJANGO_VERSION >= 170:
         maskedurl = urlquote(maskedurl)

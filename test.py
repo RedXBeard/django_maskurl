@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-import django
+import django, sys
 from django.conf import settings
 from django.test.simple import DjangoTestSuiteRunner
 
