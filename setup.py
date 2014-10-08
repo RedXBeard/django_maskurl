@@ -14,7 +14,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 download_url = 'https://github.com/RedXBeard/RomanNumbers/tarball/%s'%__version__
 setup(
     name='django_maskurl',
-    packages = ['django_maskurl'],
+    packages = ['maskurl'],
     version = __version__,
     description = 'To mask django url paths, instead of built in template tag',
     author = u"Barbaros YILDIRIM",
@@ -25,11 +25,11 @@ setup(
                 'hide django url', 'url', 'django url'],
     long_description = long_description,
     classifiers = [
-        'Intended Audience :: Python Django Developers',
+        'Intended Audience :: Developers',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Operating Systems :: OS Independent',
-        'Programming Language :: Python 2.7 / 2.6',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
         'Natural Language :: English',
         'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
         'Topic :: Internet :: WWW/HTTP',
