@@ -11,7 +11,7 @@ Installing
 
 .. code-block:: bash
 
-    pip install django_maskurl
+    pip install django-maskurl
 
 Then add <code>maskurl.middleware.UnMaskURLMiddleware</code> to the end of your <code>MIDDLEWARE_CLASSES</code>.
 
