@@ -1,6 +1,11 @@
 django_maskurl
 ==============
-[![Build Status](https://travis-ci.org/RedXBeard/django_maskurl.svg?branch=master)](https://travis-ci.org/RedXBeard/django_maskurl)
+[![Build Status](https://travis-ci.org/RedXBeard/django_maskurl.svg?branch=master)](https://travis-ci.org/RedXBeard/django_maskurl) 
+[![Downloads](https://pypip.in/download/django-maskurl/badge.svg?period=day)](https://pypi.python.org/pypi/django-maskurl/)
+[![Latest Version](https://pypip.in/version/django-maskurl/badge.svg)](https://pypi.python.org/pypi/django-maskurl/)
+[![Supported Python versions](https://pypip.in/py_versions/django-maskurl/badge.svg)](https://pypi.python.org/pypi/django-maskurl/)
+[![License](https://pypip.in/license/django-maskurl/badge.svg)](https://pypi.python.org/pypi/django-maskurl/)
+
 
 Masking url's on templates not to show exact path, hiding them all except get params.
 
