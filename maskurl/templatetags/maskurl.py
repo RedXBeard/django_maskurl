@@ -29,7 +29,7 @@ def maskurl(given_url, *args, **kwargs):
             {% maskurl reversed_url %}
 
     After Django 1.7.0 version url built in
-    templatetag returns quoted paths by default
+    templatetag returns quoted paths
     """
 
     maskedurl = ""
