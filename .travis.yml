@@ -3,6 +3,6 @@ language:
 python:
   - "2.7"
 install:
-  - pip install -r requirements
+  - pip install Django>=1.6
 script:
   - python test.py
